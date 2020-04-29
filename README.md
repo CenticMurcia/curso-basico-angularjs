@@ -1,4 +1,12 @@
-# `angular-seed` — the seed for AngularJS apps
+# `Curso introducción AngularJS` 
+
+El presente proyecto se usará para el curso de introducción a la programación de aplicaciones webs con 
+AngularJS. Todo el proyecto será comentado y se irán añadiendo ramas con las diferentes partes tratadas. 
+La siguiente documentación será complementaria a la formación para seguir la lógica de trabajo de este proyecto:
+
+https://drive.google.com/open?id=1y1--CCU18dXJa7Ao2UqTn76TR8Ym5kB4
+
+## `angular-seed` — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
 to quickly bootstrap your angular webapp projects and dev environment for these projects.
