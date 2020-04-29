@@ -1,14 +1,16 @@
 'use strict';
 
-// Declare app level module which depends on views, and core components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+/**
+ * Este código es el más básico para registrar una aplicación web de AngularJS. 
+ * 
+ * Lo primero que se hace es crear el módulo root de nuestra aplicación llamado myApp. Después le añadimos a ese módulo un controlador llamado 
+ * HelloController donde le pasaremos a su función $scope como parámetro.
+ * 
+ * $scope registrará el objeto helloTo. Todo objeto usado con $scope se podrá utilizar en el HTML como ya hemos visto en el index.html
+ */
+angular.module("myApp", [])
+      
+  .controller("HelloController", function($scope) {
+    $scope.helloTo = {};
+    $scope.helloTo.title = "AngularJS";
+  });
