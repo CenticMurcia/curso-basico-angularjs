@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Crearemos un submódulo a partir del módulo principal llamado firstSubModule.
+ * Crearemos un submódulo a partir del módulo principal llamado secondSubModule.
  */
 angular.module('myApp.secondSubModule',[])
 
