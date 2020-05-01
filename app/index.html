@@ -30,6 +30,8 @@ que en este ejemplo se encuentra creado en app.js -->
   <!-- ng-controller le dice a AngujarJS que controlador estamos usando en esta vista. -->
   <div ng-controller = "HelloController" >
 
+    <h2>Hello Controller</h2>
+
     <!-- La directiva ng-model crea una variable 'name', que puede ser usada en el HTML, no es necesario tener que crearla en el controlador. -->
     <p>Introduzca un nombre: <input type="text" ng-model="name"></p>
 
@@ -39,7 +41,12 @@ que en este ejemplo se encuentra creado en app.js -->
     <h2>Welcome <span ng-bind="name"></span> to the {{helloTo.title}} tutorial!</h2>
   </div>
 
+  <div ng-controller = "MathController">
 
+    <h2>Math Controller</h2>
+
+    Two times <input ng-model="num"> equals {{ double(num) }}
+  </div>
 
   
 </body>
@@ -47,4 +54,5 @@ que en este ejemplo se encuentra creado en app.js -->
     <!-- Scripts creados para nuestra aplicación -->
   <script src="app.js"></script>
   <script src="components/myFirstComponent/my-first-component.js"></script>
+  <script src="components/secondComponent/second-component.js"></script>
 </html>
