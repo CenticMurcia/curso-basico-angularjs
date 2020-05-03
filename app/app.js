@@ -6,5 +6,6 @@
 angular.module("myApp", [
   'myApp.firstSubModule',
   'myApp.secondSubModule',
-  'myApp.scopeSubModule'
+  'myApp.scopeSubModule',
+  'myApp.customDirectiveModule'
 ]);
