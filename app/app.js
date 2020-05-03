@@ -5,5 +5,6 @@
  */
 angular.module("myApp", [
   'myApp.firstSubModule',
-  'myApp.secondSubModule'
+  'myApp.secondSubModule',
+  'myApp.scopeSubModule'
 ]);

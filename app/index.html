@@ -20,6 +20,13 @@
   <!-- Introduciremos la librería de AngularJS -->
   <script src="./lib/angular/angular.js"></script>
 
+  <style>
+    body {
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
+
 </head>
 
 <!-- Con la directiva ng-app le decimos al HTML donde se va a contener nuestra aplicación de AngularJS, podemos ponerla a nivel de la web completa
@@ -38,7 +45,7 @@ que en este ejemplo se encuentra creado en app.js -->
     <!-- Con la expresión {{ helloTo.title }} hacemos data-binding con las variables del componente que hemos cargado en esta vista, existen
     más formas de hacer data-binding en AngularJS, este es el caso más básico. -->
     <!-- La directiva ng-bind usa la variable 'name' para mostra su valor introducido en la etiqueta input -->
-    <h2>Welcome <span ng-bind="name"></span> to the {{helloTo.title}} tutorial!</h2>
+    <h3>Welcome <span ng-bind="name"></span> to the {{helloTo.title}} tutorial!</h3>
   </div>
 
   <div ng-controller = "MathController">
@@ -48,6 +55,31 @@ que en este ejemplo se encuentra creado en app.js -->
     Two times <input ng-model="num"> equals {{ double(num) }}
   </div>
 
+  <!-- Controlador Scope -->
+  <div ng-controller = "ScopeController">
+
+    <h2>Main Scope Controller</h2>
+
+    <p>Nombre: <input type="text" ng-model="name"></p>
+
+    <!-- No se ha mencionado antes, pero en el HTML no es necesario poner delante $scope para referenciar a la variable del controlador -->
+    <h3>Value name: {{ name }}</h3>
+
+    <!-- Controlador SubScope anidado en el controlador anterior por lo que las variables del controlador padre podrán ser usadas y mostradas
+    en este controlador también -->
+    <div ng-controller = "SubScopeController">
+
+      <h4>Sub Scope Controller</h4>
+
+      <!-- Con $parent nos aseguramos que el valor de la variable 'name' será siempre el valor que tenga en el padre -->
+      <h5>Value name: {{ $parent.name }}</h5>
+
+      <button ng-click="changeValue()">Change value name!</button>
+
+      <h5>New value name: {{ name }}</h5>
+    </div>
+  </div>
+
   
 </body>
 
@@ -55,4 +87,5 @@ que en este ejemplo se encuentra creado en app.js -->
   <script src="app.js"></script>
   <script src="components/myFirstComponent/my-first-component.js"></script>
   <script src="components/secondComponent/second-component.js"></script>
+  <script src="components/scopeComponent/scope-component.js"></script>
 </html>
