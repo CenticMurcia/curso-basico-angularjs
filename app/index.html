@@ -20,6 +20,14 @@
   <!-- Introduciremos la librería de AngularJS -->
   <script src="./lib/angular/angular.js"></script>
 
+  <!-- En este ejemplo de enrutamiento usaremos una librería de terceros diferente al ngRoute de AngularJS, esta librería implementa 
+  mejoras por lo que nos será más util a la larga en nuestro proyecto
+
+  https://ui-router.github.io/
+  
+  -->
+  <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+
   <style>
     body {
       display: flex;
@@ -33,52 +41,19 @@
 o en una pequeña parte de nuestra página web. El nombre al que se iguala esta directiva corresponde al módulo root de nuestra aplicación de AngularJS,
 que en este ejemplo se encuentra creado en app.js -->
 <body ng-app="myApp">
-  
-  <!-- ng-controller le dice a AngujarJS que controlador estamos usando en esta vista. -->
-  <div ng-controller = "HelloController" >
 
-    <h2>Hello Controller</h2>
-
-    <!-- La directiva ng-model crea una variable 'name', que puede ser usada en el HTML, no es necesario tener que crearla en el controlador. -->
-    <p>Introduzca un nombre: <input type="text" ng-model="name"></p>
-
-    <!-- Con la expresión {{ helloTo.title }} hacemos data-binding con las variables del componente que hemos cargado en esta vista, existen
-    más formas de hacer data-binding en AngularJS, este es el caso más básico. -->
-    <!-- La directiva ng-bind usa la variable 'name' para mostra su valor introducido en la etiqueta input -->
-    <h3>Welcome <span ng-bind="name"></span> to the {{helloTo.title}} tutorial!</h3>
+  <!-- Añadimos un menú con las rutas que tenemos -->
+  <div style="max-width: 200px;">
+    <ul>
+      Menu navegación
+      <li><a href="#!first">My primer controlador</a></li>
+      <li><a href="#!second">Secundo controlador</a></li>
+      <li><a href="#!scopes">Ejemplos Scopes</a></li>
+    </ul>
   </div>
 
-  <div ng-controller = "MathController">
-
-    <h2>Math Controller</h2>
-
-    Two times <input ng-model="num"> equals {{ double(num) }}
-  </div>
-
-  <!-- Controlador Scope -->
-  <div ng-controller = "ScopeController">
-
-    <h2>Main Scope Controller</h2>
-
-    <p>Nombre: <input type="text" ng-model="name"></p>
-
-    <!-- No se ha mencionado antes, pero en el HTML no es necesario poner delante $scope para referenciar a la variable del controlador -->
-    <h3>Value name: {{ name }}</h3>
-
-    <!-- Controlador SubScope anidado en el controlador anterior por lo que las variables del controlador padre podrán ser usadas y mostradas
-    en este controlador también -->
-    <div ng-controller = "SubScopeController">
-
-      <h4>Sub Scope Controller</h4>
-
-      <!-- Con $parent nos aseguramos que el valor de la variable 'name' será siempre el valor que tenga en el padre -->
-      <h5>Value name: {{ $parent.name }}</h5>
-
-      <button ng-click="changeValue()">Change value name!</button>
-
-      <h5>New value name: {{ name }}</h5>
-    </div>
-  </div>
+  <!-- Añadimos la directiva donde se van a mostrar mis rutas, como se puede ver es diferente a ngRoute -> ng-view -->
+  <div ui-view></div>
 
   <div>
 

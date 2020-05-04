@@ -6,6 +6,20 @@
 angular.module('myApp.scopeSubModule',[])
 
 /**
+ * Podemos añadir un 'estado' a la configuración de un submódulo, o del módulo principal en cualquier momento antes de 
+ * crear el componente. Esto se añadirá al modelo de 'estado' principal para poder navegar sin problema.
+ */
+.config(['$stateProvider', function($stateProvider) {
+    $stateProvider
+
+    .state('scopes', {
+        url: '/scopes',
+        templateUrl: './components/scopeComponent/scope-component.html',
+        controller: 'ScopeController'
+    });
+}])
+
+/**
  * Al controlador se le debe de añadir la dependencia del '$scope' principal y así podremos utilizar el componente en el 
  * index.html
  */

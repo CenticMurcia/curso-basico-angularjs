@@ -1,0 +1,24 @@
+<!-- Controlador Scope -->
+<div>
+
+    <h2>Main Scope Controller</h2>
+
+    <p>Nombre: <input type="text" ng-model="name"></p>
+
+    <!-- No se ha mencionado antes, pero en el HTML no es necesario poner delante $scope para referenciar a la variable del controlador -->
+    <h3>Value name: {{ name }}</h3>
+
+    <!-- Controlador SubScope anidado en el controlador anterior por lo que las variables del controlador padre podrán ser usadas y mostradas
+    en este controlador también -->
+    <div ng-controller = "SubScopeController">
+
+        <h4>Sub Scope Controller</h4>
+
+        <!-- Con $parent nos aseguramos que el valor de la variable 'name' será siempre el valor que tenga en el padre -->
+        <h5>Value name: {{ $parent.name }}</h5>
+
+        <button ng-click="changeValue()">Change value name!</button>
+
+        <h5>New value name: {{ name }}</h5>
+    </div>
+</div>

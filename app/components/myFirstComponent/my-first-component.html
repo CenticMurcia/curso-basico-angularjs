@@ -1,0 +1,13 @@
+<!-- HTML Hello Controller -->
+<div>
+
+    <h2>Hello Controller</h2>
+
+    <!-- La directiva ng-model crea una variable 'name', que puede ser usada en el HTML, no es necesario tener que crearla en el controlador. -->
+    <p>Introduzca un nombre: <input type="text" ng-model="name"></p>
+
+    <!-- Con la expresión {{ helloTo.title }} hacemos data-binding con las variables del componente que hemos cargado en esta vista, existen
+    más formas de hacer data-binding en AngularJS, este es el caso más básico. -->
+    <!-- La directiva ng-bind usa la variable 'name' para mostra su valor introducido en la etiqueta input -->
+    <h3>Welcome <span ng-bind="name"></span> to the {{helloTo.title}} tutorial!</h3>
+</div>
