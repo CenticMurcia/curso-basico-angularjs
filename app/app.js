@@ -13,6 +13,7 @@ angular.module("myApp", [
   'myApp.scopeSubModule',
   'myApp.customDirectiveModule',
   'myApp.serviceSubModule',
+  'myApp.formSubModule',
 
   'myApp.customFactoryModule'
 ])
@@ -46,6 +47,12 @@ angular.module("myApp", [
     url: '/service',
     templateUrl: './components/serviceComponent/service.component.html',
     controller: 'ServiceController'
+  })
+
+  .state('form', {
+    url: '/form',
+    templateUrl: './components/formComponent/form.component.html',
+    controller: 'FormController'
   });
 
   $urlRouterProvider.otherwise('/first');

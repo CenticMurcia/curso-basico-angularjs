@@ -1,0 +1,36 @@
+<h2>Formulario Controller</h2>
+
+<!-- Colocamos el atributo 'novalidate' para sobreescribir las funcionalidades de validación del navegador con 
+   las usadas por AngularJS
+
+    Importante y necesario, tanto la etiqueta 'form' como todas aquellas que queramos validar necesitarán tener 
+    un nombre, 'name=""'
+-->
+<form name="myForm" novalidate>
+    <label for="username">Nombre: </label>
+    <input type="text" name="usernameForm" ng-model="user.username" required>
+    <!-- Si el 'usernameForm es invalido o el campo a sido modificado mostrará el contenido -->
+    <div ng-show="myForm.usernameForm.$invalid && myForm.usernameForm.$dirty" style="background-color: red; margin: 5px;">
+
+        <!-- Si el 'suernameForm' a dado error como campo requerido se mostrará el contenido -->
+        <div ng-show="myForm.usernameForm.$error.required" style="color: white;"> Name is required. </div>
+    
+    </div>
+
+    <label for="password">Contraseña: </label>
+    <input type="password" name="passwordForm" ng-model="user.password" required minlength="4">
+    <!-- Si el 'passwordForm es invalido o el campo a sido modificado mostrará el contenido -->
+    <div ng-show="myForm.passwordForm.$invalid && myForm.passwordForm.$dirty" style="background-color: red; margin: 5px;">
+
+        <!-- Si el 'passwordForm' a dado error como campo requerido se mostrará el contenido -->
+        <div ng-show="myForm.passwordForm.$error.required" style="color: white;"> Password is required. </div>
+        <!-- Si el 'passwordForm' a dado error como tamaño minimo requerido se mostrará el contenido -->
+        <div ng-show="myForm.passwordForm.$error.minlength" style="color: white;"> Password must be at least 4 characters long. </div>
+    
+    </div>
+
+    <!-- Mienstras no se cumplan las condiciones que hay dentro del 'ng-disabled' el botón para enviar el formulario 
+        permanecerá dehabilitado -->
+    <button type="submit" ng-disabled="myForm.usernameForm.$dirty && myForm.usernameForm.$invalid ||
+        myForm.passwordForm.$dirty && myForm.passwordForm.$invalid" ng-click="submit()">Enviar</button>
+</form>

@@ -33,6 +33,16 @@
       display: flex;
       justify-content: space-around;
     }
+
+    /* Estilo para la validación de los formularios */
+
+    .ng-valid[required], .ng-valid.required  {
+      border-left: 5px solid #42A948; 
+    }
+  
+    .ng-invalid:not(form)  {
+      border-left: 5px solid #a94442; 
+    }
   </style>
 
 </head>
@@ -50,6 +60,7 @@ que en este ejemplo se encuentra creado en app.js -->
       <li><a href="#!second">Secundo controlador</a></li>
       <li><a href="#!scopes">Ejemplos Scopes</a></li>
       <li><a href="#!service">Ejemplo Servicios</a></li>
+      <li><a href="#!form">Ejemplo Formulario</a></li>
     </ul>
   </div>
 
@@ -75,6 +86,7 @@ que en este ejemplo se encuentra creado en app.js -->
   <script src="components/secondComponent/second.component.js"></script>
   <script src="components/scopeComponent/scope.component.js"></script>
   <script src="components/serviceComponent/service.component.js"></script>
+  <script src="components/formComponent/form.component.js"></script>
 
   <script src="directives/customDirective/custom.directive.js"></script>
 
