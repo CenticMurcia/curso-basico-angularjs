@@ -1,0 +1,13 @@
+<!-- Service Controller
+
+    Con ng-init cargaremos la información del usuario al entrar en la vista
+-->
+<div ng-init="loadInfo()">
+    <h1>Service Controller</h1>
+
+    <h2>{{userData.login}}</h2>
+
+    <!-- Lo nuevo añadido en la directiva ng-src para poder cargar dinámicamente imágenes cargadas en una 
+    petición AJAX $http -->
+    <img ng-src="{{ userData.avatar_url }}" >
+</div>

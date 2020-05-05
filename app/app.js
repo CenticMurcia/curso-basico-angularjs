@@ -11,7 +11,10 @@ angular.module("myApp", [
   'myApp.firstSubModule',
   'myApp.secondSubModule',
   'myApp.scopeSubModule',
-  'myApp.customDirectiveModule'
+  'myApp.customDirectiveModule',
+  'myApp.serviceSubModule',
+
+  'myApp.customFactoryModule'
 ])
 
 /**
@@ -37,6 +40,12 @@ angular.module("myApp", [
     url: '/second',
     templateUrl: './components/secondComponent/second.component.html',
     controller: 'MathController'
+  })
+
+  .state('service', {
+    url: '/service',
+    templateUrl: './components/serviceComponent/service.component.html',
+    controller: 'ServiceController'
   });
 
   $urlRouterProvider.otherwise('/first');
