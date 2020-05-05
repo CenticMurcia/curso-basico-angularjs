@@ -1,0 +1,24 @@
+<h2>Filters Component</h2>
+
+<!-- Variable de filtrado por texto -->
+<p>Introduzca una cadena de texto para el filtrado:</p>
+<p><input type="text" ng-model="text"></p>
+
+<table border="1" width="100%">
+    <tr>
+        <!-- Al pulsar sobre cada cabecera ordenará en orden descendente los valores -->
+        <th ng-click="orderBy('name')">Nombre</th>
+        <th ng-click="orderBy('country')">País</th>
+        <th ng-click="orderBy('price')">Sueldo</th>
+        <th ng-click="orderBy('birthday')">Sueldo</th>
+    </tr>
+    <!-- Filtraremos por la variable 'name' y ordenaremos por la variable 'myOrderBy' -->
+    <tr ng-repeat="person in peoples | filter: text | orderBy: myOrderBy">
+        <td>{{ person.name | uppercase }}</td>
+        <td>{{ person.country | lowercase }}</td>
+        <!-- El texto 'EUR ' se colocará delante de cada variable 'price' tras el filtrado -->
+        <td>{{ person.price | currency: 'EUR ' }}</td>
+        <!-- El parámetro de la fecha nos dice como se ha de mostrar la variable 'birthday' -->
+        <td>{{ person.birthday | date: 'dd-mm-yyyy' }}</td>
+    </tr>
+</table>
