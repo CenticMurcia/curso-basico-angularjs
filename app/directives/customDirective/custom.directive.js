@@ -28,7 +28,7 @@ angular.module('myApp.customDirectiveModule',[])
         /**
          * Dirección de nuestro HTML, también se podría colocar en línea si no es muy complejo
          */
-        templateUrl: 'directives/customDirective/custom-directive.html',
+        templateUrl: 'directives/customDirective/custom.directive.html',
         /**
          * Controlador para la parte lógica que pueda tener nuestra directiva
          * @param {} $scope Modelo de datos de nuestra aplicación

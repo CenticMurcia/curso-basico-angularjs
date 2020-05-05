@@ -29,13 +29,13 @@ angular.module("myApp", [
   
   .state('first', {
     url: '/first',
-    templateUrl: './components/myFirstComponent/my-first-component.html',
+    templateUrl: './components/myFirstComponent/my-first.component.html',
     controller: 'HelloController'
   })
 
   .state('second', {
     url: '/second',
-    templateUrl: './components/secondComponent/second-component.html',
+    templateUrl: './components/secondComponent/second.component.html',
     controller: 'MathController'
   });
 

@@ -14,7 +14,7 @@ angular.module('myApp.scopeSubModule',[])
 
     .state('scopes', {
         url: '/scopes',
-        templateUrl: './components/scopeComponent/scope-component.html',
+        templateUrl: './components/scopeComponent/scope.component.html',
         controller: 'ScopeController'
     });
 }])
