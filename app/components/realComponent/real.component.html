@@ -1,0 +1,19 @@
+<!-- Real Component -->
+<!-- Primer ejemplo con un solo componente -->
+<div>
+    <ul>
+        <!-- $ctrl hace referencia a la lógica de trabajo del controlador asociado -->
+        <li ng-repeat="phone in $ctrl.phones">
+            <span>{{phone.name}}</span>
+            <p>{{phone.snippet}}</p>
+        </li>
+    </ul>
+
+    <br><br>
+
+    <!-- Ejemplo con un componente hijo -->
+    <h3>Mismo ejemplo sub-componente</h3>
+    
+    <!-- La forma de pasarle información al componente hijo es similar a la vista en directivas custom -->
+    <child-component ng-repeat="phone in $ctrl.phones" phone="phone" on-message="$ctrl.message()"></child-component> 
+</div>

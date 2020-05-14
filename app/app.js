@@ -15,6 +15,7 @@ angular.module("myApp", [
   'myApp.serviceSubModule',
   'myApp.formSubModule',
   'myApp.filtersSubModule',
+  'myApp.realSubModule',
 
   'myApp.customFactoryModule'
 ])
@@ -60,6 +61,16 @@ angular.module("myApp", [
     url: '/filter',
     templateUrl: './components/filtersComponent/filters.component.html',
     controller: 'FilterController'
+  })
+  
+  /**
+   * Como podéis fijaros, la forma de crear un estado con un componente es muy similar a la normal 
+   * de crear para un controlador, salvo que la plantilla que le pasamos es la etiqueta de dicho 
+   * componente.
+   */
+  .state('component', {
+    url: '/component',
+    template: '<real-component></real-component>'
   });
 
   $urlRouterProvider.otherwise('/first');
