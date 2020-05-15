@@ -20,16 +20,26 @@ angular.module('myApp.serviceSubModule',[])
      *      $http.get('https://api.github.com/users/ServerJon').then();
      */
     $scope.loadInfo = function(){
-        $http({
-            method: 'GET',
-            url: 'https://api.github.com/users/ServerJon'
-        }).then(
-            function susccess(response) {
-                $scope.userData = response.data;
-            },
-            function error(error){
-                console.log("Error loadInfo():",error);
-            }
-        );
+        // $http({
+        //     method: 'GET',
+        //     url: 'https://api.github.com/users/ServerJon'
+        // }).then(
+        //     function susccess(response) {
+        //         $scope.userData = response.data;
+        //     },
+        //     function error(error){
+        //         console.log("Error loadInfo():",error);
+        //     }
+        // ).finally(function() {
+        //     console.log("This is finally function!");
+        // });
+
+        $http.get('https://api.github.com/users/ServerJon')
+        .then(function correcta(response) {
+            $scope.userData = response.data;
+        })
+        .finally(function() {
+            console.log("This is finally function!");
+        });
     };
 }]);
