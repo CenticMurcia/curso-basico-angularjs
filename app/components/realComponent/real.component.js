@@ -41,12 +41,12 @@ angular.module('myApp.realSubModule',[])
  */
 .component('childComponent', {
     template: '<p>Phone ' +
-        '<span>{{$ctrl.phone.name}}</span>' +
-        '<p>{{$ctrl.phone.snippet}}</p></p>' +
-        '<button ng-click="$ctrl.onMessage()">Pulsame!</button>',
+        '<span>{{$ctrl.childphone.name}}</span>' +
+        '<p>{{$ctrl.childphone.snippet}}</p></p>' +
+        '<button ng-click="$ctrl.onData()">Pulsame!</button>',
     controller: function childComponent() { },
     bindings: {
-        phone: '<',
-        onMessage: '&'
+        childphone: '<', // Tanto '=' como '<' como '@' se utilizan para variables que estamos recibiendo en el componente (Input)
+        onData: '&' // Indica eventos de salida (Output)
     }
 });

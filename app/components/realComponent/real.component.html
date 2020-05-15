@@ -15,5 +15,5 @@
     <h3>Mismo ejemplo sub-componente</h3>
     
     <!-- La forma de pasarle información al componente hijo es similar a la vista en directivas custom -->
-    <child-component ng-repeat="phone in $ctrl.phones" phone="phone" on-message="$ctrl.message()"></child-component> 
+    <child-component ng-repeat="phone in $ctrl.phones" childphone="phone" on-data="$ctrl.message()"></child-component> 
 </div>
